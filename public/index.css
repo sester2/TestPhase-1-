@@ -1,0 +1,34 @@
+.post-container {
+    border: thin solid black;
+    padding: 0.5rem;
+    margin: 0.5rem;
+  }
+  .newPost{
+    border: thin solid black
+  }
+  
+  .logBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navBar {
+    background-color: tomato;
+    padding: 1.5rem;
+    font-size: 16pt;
+    text-align: right;
+  }
+  
+  .title {
+    font-size: 36pt;
+    text-align: left;
+  }
+  
+  .links {
+    padding-left: 25px;
+  }
+
+  /* #my-submit-button{ 
+    
+  } */
