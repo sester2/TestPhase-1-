@@ -11,6 +11,8 @@ const App = () => {
   const [originalposts, setoriginalposts] = useState([]);
   // console.log("This is the originalposts: ", originalposts);
   
+
+
   // useEffect(() => {
   //   const getPosts = async () => {
   //     const result = await fetchPosts();
@@ -40,20 +42,16 @@ const App = () => {
         <Nav />
         <Routes>
           <Route path="/signin" element={<Signup />} />
-          {/* <Route
+          <Route
             path="/"
-            // element={
-            //   // <Posts
-            //   //   // setoriginalposts={setoriginalposts}
-            //   //   // originalposts={originalposts}
-            //   // />
-            }
-          /> */}
-          {/* <Route path="/posts" element={<Posts
+            element={
+              <Posts
                 setoriginalposts={setoriginalposts}
-                originalposts={originalposts}/>} */}
-          {/* /> */}
-          {/* <Route path="/profile" element={<NewPost />} /> */}
+                originalposts={originalposts}
+              />
+            }
+          />
+          <Route path="/profile" element={<NewPost />} />
         </Routes>
       </BrowserRouter>
     </div>

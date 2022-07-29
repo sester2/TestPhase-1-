@@ -1,44 +1,21 @@
 import { useState } from "react";
 import { createPost } from "../api";
 
-const NewPost = (props) => {
-  //   const [title, setTitle] = useState("");
-  //   const [description, setDescription] = useState("");
-  //   const [willDeliver, setwillDeliver] = useState(true);
-  //   const [price, setPrice] = useState("");
-  //   const [location, setLocation] = useState("");
-  const {
-    title,
-    setTitle,
-    description,
-    setDescription,
-    willDeliver,
-    setwillDeliver,
-    price,
-    setPrice,
-    location,
-    setLocation,
-  } = props;
-
-  console.log("This is my props from the NewPost: ", );
+const NewPost = () => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [willDeliver, setwillDeliver] = useState("");
+  const [price, setPrice] = useState("");
+  const [location, setLocation] = useState("");
 
   const handleSubmit = async (event) => {
+    console.log("What is the bestPost: ");
     event.preventDefault();
-    const bestPosts = createPost(
-      title,
-      description,
-      price,
-      willDeliver,
-      location
-    );
 
-    console.log("This is the new post: ", bestPosts);
-
-    /*When someone types a messge into your form the handle submit function is going to grab the value of*/
+    createPost(title, description, price, willDeliver, location);
+    console.log("This is the updated State: ", createPost);
   };
 
-  // Trying to display the return of all newPosts with the new posts
-  //
   return (
     <div className="newPost">
       <form>
@@ -47,10 +24,11 @@ const NewPost = (props) => {
           type="text"
           onChange={(event) => {
             setTitle(event.target.value);
-            console.log(title);
+            console.log("This is the value of the onChange for title :", title);
           }}
           placeholder="title"
         ></input>
+
         <input
           value={description}
           type="text"
@@ -61,7 +39,7 @@ const NewPost = (props) => {
           placeholder="description"
         ></input>
         <input
-          value={will}
+          value={willDeliver}
           type="text"
           onChange={(event) => {
             setwillDeliver(event.target.value);
@@ -86,10 +64,10 @@ const NewPost = (props) => {
           }}
           placeholder="Price"
         ></input>
-        <button type="submit" onSubmit={handleSubmit}>
+
+        <button id="form_button" type="submit" onSubmit={handleSubmit}>
           Submit
         </button>
-        <p>testing testing </p>
       </form>
     </div>
   );

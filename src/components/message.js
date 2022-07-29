@@ -38,7 +38,7 @@ const NewMsg = () => {
           value={newMsg}
           placeholder="text"
           onChange={(e) => {
-            this.setNewMsg(e.target.value);
+            setNewMsg(e.target.value);
             handleChange();
           }}
         ></input>
