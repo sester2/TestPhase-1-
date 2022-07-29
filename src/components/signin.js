@@ -9,9 +9,10 @@ const Signup = ({ setToken }) => {
   async function fetchUserSignup() {
     try {
       const token = await userSignUP(username, password);
-      localStorage.setItem("token", token);
-      setToken(token);
-      console.log(token);
+      console.log(token.token);
+      localStorage.setItem("token", token.token);
+      setToken(token.token);
+      console.log("This is the new token: ", token.token);
     } catch (error) {
       console.log(error);
     }

@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-import  fetchPosts  from "../api";
+import fetchPosts from "../api";
 import NewPost from "./newposts";
 
 const URL = "https://strangers-things.herokuapp.com/api/2206-FTB-ET-WEB-FT-B";
@@ -11,7 +11,6 @@ const Posts = (props) => {
   console.log("These are my props:", props);
 
   useEffect(() => {
-    
     const fetchPosts = async () => {
       try {
         const response = await fetch(`${URL}/posts`);
@@ -28,9 +27,9 @@ const Posts = (props) => {
 
   return (
     <div>
-      <h1> Hello World </h1>
-      {/* <NewPost /> */}
-      {/* <div>
+     
+      <NewPost />
+      <div>
         {originalposts ? (
           originalposts.map((posts) => {
             return (
@@ -48,7 +47,7 @@ const Posts = (props) => {
         ) : (
           <h1>posts are loading</h1>
         )}
-      </div> */}
+      </div>
     </div>
   );
 };

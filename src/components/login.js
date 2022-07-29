@@ -1,7 +1,7 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
-import { userLogin } from "../API";
+import { userLogin } from "../api";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -46,7 +46,10 @@ const Login = () => {
         />
         <button type="submit">Login</button>
       </form>
-      <Route path="/profile.jsx" />
+      <Routes>
+        <Route path="/profile.jsx" />
+      </Routes>
+      
     </div>
   );
 };

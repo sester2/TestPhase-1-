@@ -5,22 +5,12 @@ import Nav from "./components/nav.js";
 import NewPost from "./components/newposts";
 import Posts from "./components/posts.js";
 import Signup from "./components/signin.js";
+import Login from "./components/login.js";
 
 const App = () => {
   const [token, setToken] = useState(null);
   const [originalposts, setoriginalposts] = useState([]);
   // console.log("This is the originalposts: ", originalposts);
-  
-
-
-  // useEffect(() => {
-  //   const getPosts = async () => {
-  //     const result = await fetchPosts();
-  //     setoriginalposts(result);
-  //     console.log("These are the posts from API:", result);
-  //   };
-  //   getPosts();
-  // }, []);
 
   // useEffect(() => {
   //   const localStorageToken = localStorage.getItem("token");
@@ -31,17 +21,12 @@ const App = () => {
   // }, [token]);
 
   return (
-  //   <div>
-  //     {/* <h1>
-  //       These are the stranger things
-  //     </h1>
-  //   </div>
-  //  */}
     <div>
       <BrowserRouter>
         <Nav />
         <Routes>
           <Route path="/signin" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
           <Route
             path="/"
             element={
