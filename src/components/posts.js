@@ -27,7 +27,6 @@ const Posts = (props) => {
 
   return (
     <div>
-     
       <NewPost />
       <div>
         {originalposts ? (
