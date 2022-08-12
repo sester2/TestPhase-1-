@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import fetchPosts from "../api/routes";
+import fetchPosts from "../api";
 import NewPost from "./newposts";
-import { createMessage } from "../api/routes";
+import { createMessage } from "../api";
 
 const URL = "https://strangers-things.herokuapp.com/api/2206-FTB-ET-WEB-FT-B";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { userSignUP } from "../api/routes";
+import { userSignUP } from "../api";
 
 const Signup = ({ setToken }) => {
   const [username, setUsername] = useState("");
