@@ -1,19 +1,22 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { fetchUserPosts } from "../api";
+import NewMsg from "./message";
 import NewPost from "./newposts";
 
 //I would like user to have access to see all the posts they have made
 
 const Profile = () => {
   const [posts, setPosts] = useState([]);
+  const []= useState()
 
   useEffect(() => {
     const getPosts = async () => {
       const newToken = localStorage.getItem("token");
+      
 
-      const result = await fetchUserPosts(newToken);
-      console.log("This is the newToken: ", newToken);
+      const result = await fetchUserPosts(username);
+      console.log("This is the newToken: ", );
 
       setPosts(result);
       console.log("These are the fetchuserposts:", result);
@@ -25,6 +28,7 @@ const Profile = () => {
   return (
     <div>
       <NewPost />
+      <NewMsg />
       {posts.map((post) => {
         return (
           <div className="post-container" key={`all Post:${post._id}`}>

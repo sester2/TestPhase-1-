@@ -1,11 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
-import { userLogin } from "../api";
+import { userLogin } from "../api/routes";
 
-const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+const Login = (props) => {
+  const {username, setUsername} = props;
+  const {password, setPassword} = useState("");
 
   async function fetchUserLogin() {
     try {

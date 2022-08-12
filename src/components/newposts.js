@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { createPost } from "../api";
+import { createPost } from "../api/routes";
 const URL =
   "https://strangers-things.herokuapp.com/api/2206-FTB-ET-WEB-FT-B/posts";
+
 const NewPost = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -22,7 +23,7 @@ const NewPost = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
           post: {
@@ -30,7 +31,7 @@ const NewPost = () => {
             description,
             price,
             willDeliver,
-            location
+            location,
           },
         }),
       });
@@ -51,26 +52,6 @@ const NewPost = () => {
     console.log("This is the updated State: ", createPost);
   };
 
-  // fetch('https://strangers-things.herokuapp.com/api/COHORT-NAME/posts', {
-  //   method: "POST",
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //     'Authorization': 'Bearer TOKEN_STRING_HERE'
-  //   },
-  //   body: JSON.stringify({
-  //     post: {
-  //       title: {title},
-  //       description: {description},
-  //       price: {price},
-  //       willDeliver: {willDeliver}
-  //     }
-  //   })
-  // }).then(response => response.json())
-  //   .then(result => {
-  //     console.log(result);
-  //   })
-  //   .catch(console.error);
-
   return (
     <div className="newPost">
       <form onSubmit={handleSubmit}>
@@ -82,7 +63,7 @@ const NewPost = () => {
             console.log("This is the value of the onChange for title :", title);
           }}
           placeholder="title"
-        ></input>
+        />
 
         <input
           value={description}
@@ -101,7 +82,7 @@ const NewPost = () => {
             console.log(willDeliver);
           }}
           placeholder="Will Deliver?"
-        ></input>
+        />
         <input
           type="text"
           onChange={(event) => {
@@ -109,7 +90,7 @@ const NewPost = () => {
             console.log(location);
           }}
           placeholder="Location "
-        ></input>
+        />
         <input
           value={price}
           type="text"
@@ -118,7 +99,7 @@ const NewPost = () => {
             console.log(price);
           }}
           placeholder="Price"
-        ></input>
+        />
 
         <button id="form_button" type="submit">
           Submit

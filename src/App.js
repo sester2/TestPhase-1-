@@ -7,33 +7,40 @@ import Posts from "./components/posts.js";
 import Signup from "./components/signin.js";
 import Login from "./components/login.js";
 
-const App = () => {
-  const [token, setToken] = useState(null);
-  const [originalposts, setoriginalposts] = useState([]);
-  // console.log("This is the originalposts: ", originalposts);
 
-  // useEffect(() => {
-  //   const localStorageToken = localStorage.getItem("token");
-  //   if (localStorageToken) {
-  //     setToken(localStorageToken);
-  //   }
-  //   console.log("INSIDE OUR USE EFFECT the toke is currently:", token);
-  // }, [token]);
+
+const App = () => {
+  const [], setToken] = useState(null);
+  const [originalposts, setoriginalposts] = useState([]);
+/*
+I want to utilize the username to tag new posts and retrieve them later 
+
+
+*/
+
+
+
+
+
+
 
   return (
     <div>
       <BrowserRouter>
         <Nav />
         <Routes>
-          <Route path="/signin" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/Signin" element={<Signup />} />
+
+          <Route path="/posts" element={<Posts
+                // username = {username}
+                setoriginalposts={setoriginalposts}
+                originalposts={originalposts}
+              />} />
+
           <Route
             path="/"
             element={
-              <Posts
-                setoriginalposts={setoriginalposts}
-                originalposts={originalposts}
-              />
+              <Login />
             }
           />
           <Route path="/profile" element={<NewPost />} />

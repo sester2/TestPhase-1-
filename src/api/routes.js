@@ -1,4 +1,4 @@
-const URL = "https://strangers-things.herokuapp.com/api/2206-FTB-ET-WEB-FT-B";
+const URL = "https://strangers-things.herokuapp.com/api/";
 
 export const fetchPosts = async () => {
   try {
@@ -76,6 +76,7 @@ export const userLogin = async (username, password, token) => {
 };
 
 export const createPost = async (
+  username,
   title,
   description,
   price,
@@ -88,7 +89,7 @@ export const createPost = async (
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         post: {
@@ -96,7 +97,7 @@ export const createPost = async (
           description,
           price,
           willDeliver,
-          location
+          location,
         },
       }),
     });
