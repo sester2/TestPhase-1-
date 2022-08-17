@@ -6,23 +6,16 @@ import NewPost from "./components/newposts";
 import Posts from "./components/posts.js";
 import Signup from "./components/signin.js";
 import Login from "./components/login.js";
-
-
+import Profile from "./components/profile.js";
 
 const App = () => {
-  const [], setToken] = useState(null);
+  // const [], setToken] = useState(null);
   const [originalposts, setoriginalposts] = useState([]);
-/*
+  /*
 I want to utilize the username to tag new posts and retrieve them later 
 
 
 */
-
-
-
-
-
-
 
   return (
     <div>
@@ -31,19 +24,19 @@ I want to utilize the username to tag new posts and retrieve them later
         <Routes>
           <Route path="/Signin" element={<Signup />} />
 
-          <Route path="/posts" element={<Posts
+          <Route
+            path="/posts"
+            element={
+              <Posts
                 // username = {username}
                 setoriginalposts={setoriginalposts}
                 originalposts={originalposts}
-              />} />
-
-          <Route
-            path="/"
-            element={
-              <Login />
+              />
             }
           />
-          <Route path="/profile" element={<NewPost />} />
+
+          <Route path="/" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </div>

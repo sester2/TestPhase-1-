@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createPost } from "../api";
+
 const URL =
   "https://strangers-things.herokuapp.com/api/2206-FTB-ET-WEB-FT-B/posts";
 
