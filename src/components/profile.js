@@ -3,9 +3,8 @@ import { useEffect, useState } from "react";
 import { fetchUserPosts } from "../api";
 import NewPost from "./newposts";
 
-const URL =
-  "https://strangers-things.herokuapp.com/api/";
-  
+const URL = "https://strangers-things.herokuapp.com/api/";
+
 //I would like user to have access to see all the posts they have made
 
 const Profile = () => {
@@ -36,7 +35,6 @@ const Profile = () => {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
-          
         },
       });
       const messagesResults = await user.json();
@@ -46,21 +44,25 @@ const Profile = () => {
     }
   };
   return (
+    //We want to be able to see all the messages on the page 
     <div>
-      <getUsers />
-    
-      {newPost.map((post) => {
-        return (
-          <div className="post-container" key={`all Post:${post._id}`}>
-            <h1>{post.title}</h1>
-            <h2>{post.author.username}</h2>
-            <h3>{post.description}</h3>
-            <h3>{post.price}</h3>
-            <h3>{post.location}</h3>
-          </div>
-        );
-      })}
+      <h1>Hellow this the Profile Page</h1>
     </div>
+    // <div>
+    //   <getUsers />
+
+    //   {messages.map((message) => {
+    //     return (
+    //       <div className="post-container" key={`all Post:${post._id}`}>
+    //         <h1>{post.title}</h1>
+    //         <h2>{post.author.username}</h2>
+    //         <h3>{post.description}</h3>
+    //         <h3>{post.price}</h3>
+    //         <h3>{post.location}</h3>
+    //       </div>
+    //     );
+    //   })}
+    // </div>
   );
 };
 export default Profile;
